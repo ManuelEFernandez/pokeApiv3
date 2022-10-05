@@ -7,7 +7,7 @@ const formPoke = document.getElementById("form-poke");
 
 const traerPokemon = async (input) => {
 try {
-   
+    
     let response = await fetch (`https://pokeapi.co/api/v2/pokemon/${input}`);
 
     let data = await response.json();
@@ -82,6 +82,11 @@ const inicioRenderizar = async (input) => {
 
    
     let valoresPoke = await traerPokemon(input);
+
+    if (!valoresPoke) {
+
+        return;
+    }
     renderizarPoke(valoresPoke);
     localStorage.setItem("Pokemon", []);
     localStorage.setItem("Pokemon", JSON.stringify(valoresPoke));
@@ -106,10 +111,10 @@ const inicioRenderizar = async (input) => {
         
         if (localStorage.getItem("Pokemon")) {
 
-         
+            
             
             let datos = JSON.parse(localStorage.getItem("Pokemon"));
-            
+           
             renderizarPoke(datos);
         }
     }
