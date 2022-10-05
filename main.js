@@ -23,7 +23,7 @@ try {
     }
 }
 
-let ejemplo = traerPokemon(3);
+
 
 const medirNombre = (nombre) => {
 
@@ -79,6 +79,11 @@ ${medirNombre(data.name.toUpperCase())}
 
 const inicioRenderizar = async (input) => {
 
+    if (input === '') {
+
+        alert("Ingrese un número válido");
+        return;
+    }
 
    
     let valoresPoke = await traerPokemon(input);
