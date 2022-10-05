@@ -7,11 +7,11 @@ const formPoke = document.getElementById("form-poke");
 
 const traerPokemon = async (input) => {
 try {
-    console.log("hola");
+   
     let response = await fetch (`https://pokeapi.co/api/v2/pokemon/${input}`);
 
     let data = await response.json();
-    console.log(data);
+    
     return data;
 
 } 
@@ -27,7 +27,7 @@ let ejemplo = traerPokemon(3);
 
 const medirNombre = (nombre) => {
 
-    console.log(nombre.length);
+   
     if (nombre.length > 10) {
 
      
@@ -42,7 +42,7 @@ const medirNombre = (nombre) => {
 }
 
 const renderizarPoke = (data) => {
-console.log(data.id);
+
 caja.classList.remove("borde-blanco");
 caja.classList.remove("error2");
 return  caja.innerHTML = `
@@ -85,7 +85,7 @@ const inicioRenderizar = async (input) => {
     renderizarPoke(valoresPoke);
     localStorage.setItem("Pokemon", []);
     localStorage.setItem("Pokemon", JSON.stringify(valoresPoke));
-    mostrarItems();
+    
 
     }
 
@@ -106,10 +106,10 @@ const inicioRenderizar = async (input) => {
         
         if (localStorage.getItem("Pokemon")) {
 
-            console.log("acá");
+         
             
             let datos = JSON.parse(localStorage.getItem("Pokemon"));
-            console.log(datos);
+            
             renderizarPoke(datos);
         }
     }
