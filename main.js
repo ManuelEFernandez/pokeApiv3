@@ -17,8 +17,8 @@ try {
 } 
     
     catch (error) {
-        caja.classList.add("borde-blanco", "error2");
-        caja.innerHTML = `<i class="fa-solid fa-triangle-exclamation signo error"></i>
+        caja.classList.add("borde-blanco");
+        caja.innerHTML = `<p class="signo error">!</p>
         <p class="mensaje">No existe Pokemon con ese ID</p>`
     }
 }
